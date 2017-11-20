@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database Connection Settings -->
+
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/orders</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+        <!-- Connection Pool Size (built-in) -->
+        <property name="connection.pool.size">1</property>
+        <!-- SQL Dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- Disable the second-level cache -->
+
+        <property name="hibernate.show_sql">true</property>
+        <!-- Only validate database structure -->
+        <property name="hbm2ddl.auto">validate</property>
+        <!-- Mention here all the model classes along with their package name -->
+        <mapping class="software.academy.hibermate.orders.entity.Client"/>
+
+        <mapping class="software.academy.hibermate.orders.entity.Client"/>
+    </session-factory>
+</hibernate-configuration>
