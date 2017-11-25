@@ -22,17 +22,39 @@ public class Client {
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private ClientType type;
+    private Object street;
 
-    public Client(String firstName, String secondName, String email, ClientType type) {
+    @OneToOne(fetch=FetchType.LAZY)
+    @PrimaryKeyJoinColumn
+    private Address address;
+
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public Client(Integer id, String firstName, String secondName, String email, ClientType type) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.email = email;
         this.type = type;
+        this.id=id;
     }
 
     public Client(){
 
     }
+    public Client(String firstName, String secondName, String email, ClientType type) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.email = email;
+        this.type = type;
+
+    }
+
+
+
+
 
     public Integer getId() {
         return id;
@@ -52,5 +74,9 @@ public class Client {
 
     public ClientType getType() {
         return type;
+    }
+
+    public Object getStreet() {
+        return street;
     }
 }

@@ -21,7 +21,10 @@
         <property name="hbm2ddl.auto">validate</property>
         <!-- Mention here all the model classes along with their package name -->
         <mapping class="software.academy.hibermate.orders.entity.Client"/>
-
-        <mapping class="software.academy.hibermate.orders.entity.Client"/>
+        <mapping class="software.academy.hibermate.orders.entity.ClientType"/>
+        <mapping class="software.academy.hibermate.orders.entity.Address"/>
+        <mapping class="software.academy.hibermate.orders.entity.Order"/>
+        <mapping class="software.academy.hibermate.orders.entity.OrderItem"/>
+        <mapping class="software.academy.hibermate.orders.entity.Product"/>
     </session-factory>
 </hibernate-configuration>
